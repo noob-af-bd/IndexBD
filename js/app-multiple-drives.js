@@ -142,7 +142,7 @@ function nav(path) {
     var names = window.drive_names;
     var drive_name = window.drive_names[cur];
 
-    html += `<li class="nav-link"><a class="nav-link" href="${UI.nav_link_3_link}">${UI.nav_link_3}</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item"  href="${UI.home_link_bdh}">> Home</a>`;
+    html += `<a class="nav-link" href="${UI.nav_link_3_link}">${UI.nav_link_3}</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item"  href="${UI.home_link_bdh}">> Home</a>`;
 
     if (!model.is_search_page) {
         var arr = path.trim('/').split('/');
