@@ -27,7 +27,7 @@ function init() {
   </div>
 </div>
 <br>
-<footer class="footer mt-auto py-3 text-muted ${UI.footer_style_class}" style="${UI.fixed_footer ?'position: fixed; ': ''}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;${UI.hide_footer ? ' display:none;': ' display:block;'}"> <div class="container" style="width: auto; padding: 0 10px;"> <p class="float-end"> <a class="nav-link" href="#">Back to top</a> </p><p> ${UI.footer_text} -<a class="nav-link" href="https://t.me/bangladeshHoarding" target="_blank">Bangladesh Hoarding</a></p> <p>© ${UI.copyright_year} - <a class="nav-link" href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
+<footer class="footer mt-auto py-3 text-muted ${UI.footer_style_class}" style="${UI.fixed_footer ?'position: fixed; ': ''}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;${UI.hide_footer ? ' display:none;': ' display:block;'}"> <div class="container" style="width: auto; padding: 0 10px;"> <p class="float-end"> <a class="nav-link" href="#">Back to top</a> </p><p> ${UI.footer_text} -<a class="nav-link" href="${UI.footer_text_links}" target="_blank">${UI.footer_text_links_text}</a></p> <p>© ${UI.copyright_year} - <a class="nav-link" href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
   `;
     $('body').html(html);
 }
@@ -142,7 +142,7 @@ function nav(path) {
     var names = window.drive_names;
     var drive_name = window.drive_names[cur];
 
-    html += `<li class="nav-link"><a href="${UI.nav_link_3_link}">${UI.nav_link_3}</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item"  href="https://indexbd.xyz">> Home</a>`;
+    html += `<li class="nav-link"><a href="${UI.nav_link_3_link}">${UI.nav_link_3}</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item"  href="${UI.home_link_bdh}">> Home</a>`;
 
     if (!model.is_search_page) {
         var arr = path.trim('/').split('/');
