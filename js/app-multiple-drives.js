@@ -27,7 +27,7 @@ function init() {
   </div>
 </div>
 <br>
-<footer class="footer mt-auto py-3 text-muted ${UI.footer_style_class}" style="${UI.fixed_footer ?'position: fixed; ': ''}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;${UI.hide_footer ? ' display:none;': ' display:block;'}"> <div class="container" style="width: auto; padding: 0 10px;"> <p class="float-end"> <a href="#">Back to top</a> </p><p>"বিনোদন হোক ঝামেলাহীন"-<a href="https://t.me/bangladeshHoarding" target="_blank">Bangladesh Hoarding</a></p>' : ''} <p>© ${UI.copyright_year} - <a href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
+<footer class="footer mt-auto py-3 text-muted ${UI.footer_style_class}" style="${UI.fixed_footer ?'position: fixed; ': ''}left: 0; bottom: 0; width: 100%; color: white; z-index: 9999;${UI.hide_footer ? ' display:none;': ' display:block;'}"> <div class="container" style="width: auto; padding: 0 10px;"> <p class="float-end"> <a class="nav-link" href="#">Back to top</a> </p><p> ${UI.footer_text} -<a class="nav-link" href="https://t.me/bangladeshHoarding" target="_blank">Bangladesh Hoarding</a></p> <p>© ${UI.copyright_year} - <a class="nav-link" href=" ${UI.company_link}" target="_blank"> ${UI.company_name}</a>, All Rights Reserved.</p> </div> </footer>
   `;
     $('body').html(html);
 }
@@ -130,19 +130,19 @@ function nav(path) {
     var cur = window.current_drive_order || 0;
     html += `<nav class="navbar navbar-expand-lg${UI.fixed_header ?' fixed-top': ''} ${UI.header_style_class}">
     <div class="container-fluid">
-  <a class="navbar-brand" href="https://indexbd.xyz">${UI.logo_image ? '<img border="0" alt="'+UI.company_name+'" src="'+UI.logo_link_name+'" height="'+UI.logo_height+'" width="'+UI.logo_width+'">' : UI.logo_link_name}</a>
+  <a class="navbar-brand" href="${UI.home_link_bdh}">${UI.logo_image ? '<img border="0" alt="'+UI.company_name+'" src="'+UI.logo_link_name+'" height="'+UI.logo_height+'" width="'+UI.logo_width+'">' : UI.logo_link_name}</a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="https://indexbd.xyz">${UI.nav_link_1}</a>
+        <a class="nav-link" href="${UI.nav_link_1_link}">${UI.nav_link_1}</a>
       </li>`;
     var names = window.drive_names;
     var drive_name = window.drive_names[cur];
 
-    html += `<li class="nav-item dropdown"><a href="https://t.me/BangladeshHoarding">${UI.nav_link_3}</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item"  href="https://indexbd.xyz">> Home</a>`;
+    html += `<li class="nav-link"><a href="${UI.nav_link_3_link}">${UI.nav_link_3}</a><div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item"  href="https://indexbd.xyz">> Home</a>`;
 
     if (!model.is_search_page) {
         var arr = path.trim('/').split('/');
