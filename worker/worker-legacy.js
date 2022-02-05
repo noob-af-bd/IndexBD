@@ -12,17 +12,17 @@ const serviceaccounts = [
 {}
 ];
 const randomserviceaccount = serviceaccounts[Math.floor(Math.random()*serviceaccounts.length)]; // DO NOT TOUCH THIS
-const domains_for_dl = ['']; // add multiple cloudflare addresses to balance the load on download/stream servers, eg. ['https://testing.fetchgoogleapi.workers.dev', 'https://testing2.fetchgoogleapi2.workers.dev']
+const domains_for_dl = ['https://indexbd.xyz', 'https://sweets.bangladeshhoarding.workers.dev']; // add multiple cloudflare addresses to balance the load on download/stream servers, eg. ['https://testing.fetchgoogleapi.workers.dev', 'https://testing2.fetchgoogleapi2.workers.dev']
 const domain_for_dl = domains_for_dl[Math.floor(Math.random()*domains_for_dl.length)]; // DO NOT TOUCH THIS
-const video_domains_for_dl = ['']; // add multiple cloudflare addresses to balance the load on download/stream servers, eg. ['https://testing.fetchgoogleapi.workers.dev', 'https://testing2.fetchgoogleapi2.workers.dev']
+const video_domains_for_dl = ['https://indexbd.xyz', 'https://sweets.bangladeshhoarding.workers.dev']; // add multiple cloudflare addresses to balance the load on download/stream servers, eg. ['https://testing.fetchgoogleapi.workers.dev', 'https://testing2.fetchgoogleapi2.workers.dev']
 const video_domain_for_dl = video_domains_for_dl[Math.floor(Math.random()*video_domains_for_dl.length)]; // DO NOT TOUCH THIS
 const blocked_region = ['']; // add regional codes seperated by comma, eg. ['IN', 'US', 'PK']
 const blocked_asn = []; // add ASN numbers from http://www.bgplookingglass.com/list-of-autonomous-system-numbers, eg. [16509, 12345]
 const authConfig = {
-    "siteName": "Bhadoo Drive Index", // Website name
-    "client_id": "746239575955-oao9hkv614p8glrqpvuh5i8mqfoq145b.apps.googleusercontent.com", // Client id from Google Cloud Console
-    "client_secret": "u5a1CSY5pNjdD2tGTU93TTnI", // Client Secret from Google Cloud Console
-    "refresh_token": "", // Authorize token
+    "siteName": "ইনডেক্স বিডি- Index BD", // Website name
+    "client_id": "202264815644.apps.googleusercontent.com", // Client id from Google Cloud Console
+    "client_secret": "X4Z3ca8xfWDb1Voo-F9a7ZxJ", // Client Secret from Google Cloud Console
+    "refresh_token": "1//0dVtNCqUFvILHCgYIARAAGA0SNwF-L9Ir0SiG22imuNXkTNvg9ObB8obJdXTu3FiZbHKN8J_gCg1xg76Cgo7vQFVFPD41zDOy1dY", // Authorize token
     "service_account": false, // true if you're using Service Account instead of user account
     "service_account_json": randomserviceaccount, // don't touch this one
     "files_list_page_size": 50,
@@ -77,7 +77,7 @@ const uiConfig = {
     "logo_image": true, // true if you're using image link in next option.
     "logo_height": "", // only if logo_image is true
     "logo_width": "100px", // only if logo_image is true
-    "favicon": "https://cdn.jsdelivr.net/npm/@googledrive/index@2.1.8/images/favicon.ico",
+    "favicon": "ইনডেক্স বিডি- Index BD",
     // if logo is true then link otherwise just text for name
     "logo_link_name": "https://cdn.jsdelivr.net/npm/@googledrive/index@2.1.8/images/bhadoo-cloud-logo-white.svg",
     "fixed_header": true, // If you want the footer to be flexible or fixed.
@@ -149,30 +149,59 @@ function html(current_drive_order = 0, model = {}) {
     return `<!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
-  <title>${authConfig.siteName}</title>
-  <script async src="https://arc.io/widget.min.js#${uiConfig.arc_code}"></script>
-  <meta name="robots" content="noindex" />
-  <link rel="icon" href="${uiConfig.favicon}">
-  <script>
-    window.drive_names = JSON.parse('${JSON.stringify(authConfig.roots.map(it => it.name))}');
-    window.MODEL = JSON.parse('${JSON.stringify(model)}');
-    window.current_drive_order = ${current_drive_order};
-    window.UI = JSON.parse('${JSON.stringify(uiConfig)}');
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.plyr.io/${uiConfig.plyr_io_version}/plyr.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.0/dist/${uiConfig.theme}/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <style>a{color:${uiConfig.css_a_tag_color};}p{color:${uiConfig.css_p_tag_color};}</style>
-  <script src="${uiConfig.jsdelivr_cdn_src}@${uiConfig.version}/js/app.obf.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.12.313/build/pdf.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+<title>I N D E X B D - ইনডেক্স বিডি</title>
+<meta name="title" content="I N D E X B D - ইনডেক্স বিডি">
+<meta name="description" content="ইনডেক্স বিডি-সার্চ করে খুঁজে নিন আপনার কাক্ষিত ফাইলটি">
+<meta name="keywords" content="search, searchengine, filessearch, filessearchengine, BDH">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="author" content="Bangladesh Hoarding">
+<meta property="og:title" content="I N D E X B D - ইনডেক্স বিডি" />
+<meta property="og:type" content="search engine" />
+<meta property="og:url" content="https://indexbd.xyz" />
+<meta property="og:image" content="https://i.imgur.com/58EPYPB.png"/>
+<link rel="icon" href="ইনডেক্স বিডি- Index BD">
+<link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.0/dist/slate/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
+<div>
+<div id="content">
+<div class="container" style="padding-top: 5%;">
+<br>
+<div id="readme_md" style="padding: 20px;">
+<center><b>ইনডেক্স বিডি'তে আপনাকে স্বাগতম</b><br><a href="https://indexbd.xyz"><img src="https://raw.githubusercontent.com/noob-af-bd/BDH-bt/master/indexbd.svg" alt="I N D E X B D" border="0" height="100px" width="100%" style="margin-top: 10px;"></a><br><b>"বিনোদন হোক ঝামেলাহীন"</b><br><br></center>
+<div class="hhsearch">
+<form class="" method="get" action="https://cdn.indexbd.xyz/0:search">
+<input type="search" name="q" class="form-control rounded" placeholder="সার্চ করে খুঁজে নিন আপনার কাক্ষিত ফাইলটি...." value="" aria-label="Search" aria-describedby="search-addon" required=""><br>
+<center><button type="submit" class="btn btn btn-danger">Search Index</button> <a class="btn btn btn-danger" href="https://cdn.indexbd.xyz/">View All Files</a></center>
+</form>
+</div>
+ <div class="menu-label" style="text-align:center;margin:50px 10px 0 10px;">
+					 <p style="font-size:15"><b><a href="https://t.me/bangladeshhoarding">Join us on Telegram</a></b></p>
+ <p style="font-size:10px">Managed and Indexed by <a href="https://t.me/bangladeshhoarding">Bangladesh Hoarding</a>, <a onclick="myFunction()">Learn More</a>.</p>
+					 <p id="footer" style="display:none;font-size:10px">All Content is Indexed from Various Sites around the globe, proxied using Cloudflare Technology and then Served to authorized users only. The data is not stored on Indexbd.xyz domain or its servers, the website redirects users to third party URLs at the end of each page. This is just an Index, much like how Google and Search Engine Works.</p><p style="font-size:10px">Copyright © 2022 — All files, code and anything else found, are the property of their respective owners.<br><br><a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Findexbd.xyz&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visitors&edge_flat=false"/></a></p>
+</div>
+</div>
+</div>
+</div>
+<br>
+</div>
+<div class="powr-chat" id="6bb29431_1641942356"></div><script src="https://www.powr.io/powr.js?platform=html"></script>
+<div class="powr-social-media-icons" id="dfe5d5a7_1642343609"></div><script src="https://www.powr.io/powr.js?platform=html"></script>
 </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-  <script src="https://cdn.plyr.io/${uiConfig.plyr_io_version}/plyr.polyfilled.js"></script>
+<script>
+function myFunction() {
+ var x = document.getElementById("footer");
+ if (x.style.display === "none") {
+ x.style.display = "block";
+ } else {
+ x.style.display = "none";
+ }
+}	
+</script>
 </html>`;
 };
 
