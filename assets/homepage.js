@@ -1,21 +1,299 @@
-let len = window.drive_names.length;
 let html = "";
-for (var i = 0; i < len; i++) {
-html += `<a href="/`+i+`:/" style="color: ${UI.folder_text_color};" class="list-group-item list-group-item-action">
-       <svg width="1.5em" height="1.5em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-          <linearGradient id="WQEfvoQAcpQgQgyjQQ4Hqa" x1="24" x2="24" y1="6.708" y2="14.977" gradientUnits="userSpaceOnUse">
-             <stop offset="0" stop-color="#eba600"></stop>
-             <stop offset="1" stop-color="#c28200"></stop>
-          </linearGradient>
-          <path fill="url(#WQEfvoQAcpQgQgyjQQ4Hqa)" d="M24.414,10.414l-2.536-2.536C21.316,7.316,20.553,7,19.757,7L5,7C3.895,7,3,7.895,3,9l0,30	c0,1.105,0.895,2,2,2l38,0c1.105,0,2-0.895,2-2V13c0-1.105-0.895-2-2-2l-17.172,0C25.298,11,24.789,10.789,24.414,10.414z"></path>
-          <linearGradient id="WQEfvoQAcpQgQgyjQQ4Hqb" x1="24" x2="24" y1="10.854" y2="40.983" gradientUnits="userSpaceOnUse">
-             <stop offset="0" stop-color="#ffd869"></stop>
-             <stop offset="1" stop-color="#fec52b"></stop>
-          </linearGradient>
-          <path fill="url(#WQEfvoQAcpQgQgyjQQ4Hqb)" d="M21.586,14.414l3.268-3.268C24.947,11.053,25.074,11,25.207,11H43c1.105,0,2,0.895,2,2v26	c0,1.105-0.895,2-2,2H5c-1.105,0-2-0.895-2-2V15.5C3,15.224,3.224,15,3.5,15h16.672C20.702,15,21.211,14.789,21.586,14.414z"></path>
-       </svg> `+
-       window.drive_names[i]
-    +`</a>`;
+html += `
+<style>
+$white: #EDEDED;
+$gray: #BFC0C0;
+$dark: #585959;
+$light: #D3DEEA;
+
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Lato');
+
+$big: 'Abril Fatface', serif;
+$body: 'Lato', sans-serif;
+
+body {
+  background: $light;
 }
-$('#n_drives').html(len);
-$('#list').html(html);
+
+.top {
+  margin-top: 30px;
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin-top: -40px;
+}
+
+.ghost {
+  width: 50%;
+  height: 53%;
+  left: 25%;
+  top: 10%;
+  position: absolute;
+  border-radius: 50% 50% 0 0;
+  background: $white;
+  border: 1px solid $gray;
+  border-bottom: none;
+  animation: float 2s ease-out infinite;
+}
+
+.ghost-copy {
+  width: 50%;
+  height: 53%;
+  left: 25%;
+  top: 10%;
+  position: absolute;
+  border-radius: 50% 50% 0 0;
+  background: $white;
+  border: 1px solid $gray;
+  border-bottom: none;
+  animation: float 2s ease-out infinite;
+  z-index: 0;
+}
+
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  top: 20%;
+}
+.eye, .eye-right {
+  position: absolute;
+  background: $dark;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  top: 40%;
+}
+
+.eye {
+  left: 25%;
+}
+.eye-right {
+  right: 25%;
+}
+
+.mouth {
+  position:absolute;
+  top: 50%;
+  left: 45%;
+  width: 10px;
+  height: 10px;
+  border: 3px solid;
+  border-radius: 50%;
+  border-color: transparent $dark $dark transparent;
+  transform: rotate(45deg);
+}
+
+.one, .two, .three, .four {
+  position: absolute;
+  background: $white;
+  top: 85%;
+  width: 25%;
+  height: 23%;
+  border: 1px solid $gray;
+  z-index: 0;
+}
+
+.one {
+  border-radius: 0 0 100% 30%;
+  left: -1px;
+}
+
+.two {
+  left: 23%;
+  border-radius: 0 0 50% 50%;
+}
+
+.three {
+  left: 50%;
+  border-radius: 0 0 50% 50%;
+}
+
+.four {
+  left: 74.5%;
+  border-radius: 0 0 30% 100%;
+}
+
+.shadow {
+  position: absolute;
+  width: 30%;
+  height: 7%;
+  background: $gray;
+  left: 35%;
+  top: 80%;
+  border-radius: 50%;
+  animation: scale 2s infinite;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  50% {
+     transform: translateY(15px);
+  }
+}
+
+.bottom {
+  margin-top: 10px;
+}
+
+/*text styling*/
+h1 {
+  font-family: $big;
+  color: $white;
+  text-align: center;
+  font-size: 9em;
+  margin: 0;
+  text-shadow: -1px 0 $gray, 0 1px $gray, 1px 0 $gray, 0 -1px $gray;
+}
+h3 {
+  font-family: $body;
+  font-size: 2em;
+  text-transform: uppercase;
+  text-align: center;
+  color: $gray;
+  margin-top: -20px;
+  font-weight: 900;
+}
+p {
+  text-align: center;
+  font-family: $body;
+  color: $dark;
+  font-size: .6em;
+  margin-top: -20px;
+  text-transform: uppercase;
+}
+
+.search {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/*search style*/
+
+.search-bar {
+  border: 1px solid $gray;
+  padding: 5px;
+  height: 20px;
+  margin-left: -30px;
+  width: 200px;
+  outline: none;
+  &:focus {
+    border: 1px solid $light;
+  }
+}
+
+.search-btn {
+  position: absolute;  
+  width: 30px;
+  height: 32px;
+  border: 1px solid $gray;
+  background: $gray;
+  text-align: center;
+  color: $white;
+  cursor: pointer;
+  font-size: 1em;
+  outline: none;
+  &:hover {
+    background: $white;
+    border: 1px solid $white;
+    color: $gray;
+    transition: all .2s ease;
+  }
+}
+
+.btn {
+  background: $white;
+  padding: 15px 20px;
+  margin: 5px;
+  color: $dark;
+  font-family: $body;
+  text-transform: uppercase;
+  font-size: .6em;
+  letter-spacing: 1px;
+  border: 0;
+  &:hover {
+    background: $gray;
+    transition: all .4s ease-out;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  padding: 10px;
+  color: #EA7996;
+  letter-spacing: 3px;
+  font-family: $body;
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    &:hover {
+      color: #7d7d7d;
+    }
+  }
+}</style>
+<div id="background"></div>
+<div class="top">
+  <h1>404</h1>
+  <h3>page not found</h3>
+</div>
+<div class="container">
+  <div class="ghost-copy">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+  </div>
+  <div class="ghost">
+    <div class="face">
+      <div class="eye"></div>
+      <div class="eye-right"></div>
+      <div class="mouth"></div>
+    </div>
+  </div>
+  <div class="shadow"></div>
+</div>
+<div class="bottom">
+  <p>Boo, looks like a ghost stole this page!</p>
+  <form class="search">
+    <input type="text" class="search-bar" placeholder="Search">
+    <button type="submit" class="search-btn">
+      <i class="fa fa-search"></i>
+    </button>
+  </form>
+  <div class="buttons">
+    <button class="btn">Back</button>
+    <button class="btn">Home</button>
+  </div>
+</div>
+
+<footer>
+  <p>made by <a href="https://codepen.io/juliepark"> julie</a> ♡
+</footer>`;
+}
